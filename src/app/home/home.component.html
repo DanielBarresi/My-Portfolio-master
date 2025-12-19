@@ -1,0 +1,581 @@
+<div id="wrapper" [class.toggled]="sidebarToggled">
+  <!-- Sidebar -->
+  <div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a href="#">
+          <img src="assets/logoDB.png" alt="Logo" class="sidebar-logo" />
+        </a>
+      </li>
+      <li>
+        <a href="#home" (click)="scrollTo($event, 'home')">Home</a>
+      </li>
+      <li>
+        <a href="#aboutme" (click)="scrollTo($event, 'aboutme')">About Me</a>
+      </li>
+      <li>
+        <a href="#skills" (click)="scrollTo($event, 'skills')">Languages</a>
+      </li>
+      <li>
+        <a href="#projects" (click)="scrollTo($event, 'projects')"
+          >Projects & Certificate</a
+        >
+      </li>
+      <li>
+        <a href="#contact" (click)="scrollTo($event, 'contact')">Contact</a>
+      </li>
+    </ul>
+  </div>
+  <!-- /#sidebar-wrapper -->
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <!-- Toggle Button -->
+    <button class="menu-toggle" (click)="toggleSidebar()" id="menu-toggle">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="home" class="intro-container">
+      <div class="intro-content-wrapper">
+        <div class="intro-left">
+          <h1 #portfolioText class="portfolio-hat">Hi There</h1>
+          <div class="masking-container">
+            <p class="typewriter-animation">
+              Welcome To My Portfolio<span class="cursor"></span>
+            </p>
+          </div>
+        </div>
+
+        <div class="intro-right card-cascade-container">
+          <div class="card-body">
+            <div class="code-snippet cascade-card-1">
+              <div class="code-header">
+                <div class="window-controls">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+              </div>
+              <div class="code-content">
+                <div class="line">
+                  <span class="line-number">1</span>
+                  <span class="purple">const</span>
+                  <span class="blue">developer</span> = {{ "{" }}
+                </div>
+                <div class="line indent">
+                  <span class="line-number">2</span>
+                  name: <span class="green">'Barresi Daniel'</span>,
+                </div>
+                <div class="line indent">
+                  <span class="line-number">3</span>
+                  role: <span class="green">'Web & Mobile Developer'</span>,
+                </div>
+                <div class="line indent">
+                  <span class="line-number">4</span>
+                  skills: [<span class="green">'HTML'</span>,
+                  <span class="green">'Flutter'</span>,
+                  <span class="green">'CSS'</span>,
+                  <span class="green">'Java'</span>],
+                </div>
+                <div class="line indent">
+                  <span class="line-number">5</span>
+                  hardWorker: <span class="purple">true</span>,
+                </div>
+                <div class="line indent">
+                  <span class="line-number">6</span>
+                  passion: <span class="orange">Infinity</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="code-snippet cascade-card-2">
+              <div class="code-header">
+                <div class="window-controls">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+              </div>
+              <div class="code-content">
+                <div class="line">
+                  <span class="line-number">1</span>
+                  <span class="purple">const</span>
+                  <span class="blue">developer</span> = {{ "{" }}
+                </div>
+                <div class="line indent">
+                  <span class="line-number">2</span>
+                  name: <span class="green">'Barresi Daniel'</span>,
+                </div>
+                <div class="line indent">
+                  <span class="line-number">3</span>
+                  role: <span class="green">'Web & Mobile Developer'</span>,
+                </div>
+                <div class="line indent">
+                  <span class="line-number">4</span>
+                  skills: [<span class="green">'HTML'</span>,
+                  <span class="green">'Flutter'</span>,
+                  <span class="green">'CSS'</span>,
+                  <span class="green">'Java'</span>],
+                </div>
+                <div class="line indent">
+                  <span class="line-number">5</span>
+                  hardWorker: <span class="purple">true</span>,
+                </div>
+                <div class="line indent">
+                  <span class="line-number">6</span>
+                  passion: <span class="orange">Infinity</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="code-snippet cascade-card-3">
+              <div class="code-header">
+                <div class="window-controls">
+                  <span class="dot red"></span>
+                  <span class="dot yellow"></span>
+                  <span class="dot green"></span>
+                </div>
+              </div>
+              <div class="code-content">
+                <div class="line">
+                  <span class="line-number">1</span>
+                  <span class="purple">&lt;!DOCTYPE html&gt;</span>
+                </div>
+                <div class="line">
+                  <span class="line-number">2</span>
+                  <span class="purple">&lt;html&gt;</span>
+                </div>
+                <div class="line indent">
+                  <span class="line-number">3</span>
+                  <span class="purple">&lt;head&gt;</span>
+                </div>
+                <div class="line indent">
+                  <span class="line-number">4</span>
+                  <span class="purple">&lt;title&gt;</span
+                  ><span class="green">Welcome</span
+                  ><span class="purple">&lt;/title&gt;</span>
+                </div>
+                <div class="line indent">
+                  <span class="line-number">5</span>
+                  <span class="purple">&lt;/head&gt;</span>
+                </div>
+                <div class="line">
+                  <span class="line-number">6</span>
+                  <span class="purple">&lt;/html&gt;</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <svg
+        class="wave-divider"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 320"
+        preserveAspectRatio="none"
+      >
+        <path
+          fill="currentColor"
+          fill-opacity="1"
+          d="M0,160L34.3,181.3C68.6,203,137,245,206,240C274.3,235,343,181,411,170.7C480,160,549,192,617,202.7C685.7,213,754,203,823,186.7C891.4,171,960,149,1029,138.7C1097.1,128,1166,128,1234,117.3C1302.9,107,1371,85,1406,74.7L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"
+        ></path>
+      </svg>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+<!-- Sezione About me! -->
+<section id="aboutme" class="about-section-custom">
+  <div class="container">
+    <div class="row align-items-center justify-content-center">
+      <div
+        class="col-lg-5 col-md-6 text-center mb-5 mb-lg-0 aos-init aos-animate"
+        data-aos="fade-right"
+      >
+        <img src="assets/DannBarr2.png" class="me-personal" alt="me-personal" />
+      </div>
+      <div class="col-lg-6 col-md-6 aos-init aos-animate" data-aos="fade-left">
+        <div class="max-box">
+          <h2 class="mb-4">About Me!</h2>
+          <p class="lead subtitle">Front-end-developer.</p>
+          <p class="lead description">
+            Ciao Sono Barresi Daniel! Un sviluppatore Front-End, appassionato di
+            creare interfacce moderne, intuitive e curate nei dettagli. Amo
+            lavorare con tecnologie web e trasformare idee in esperienze
+            digitali fluide e funzionali. Oltre al front-end, mi piace molto
+            sviluppare anche in Flutter e Dart, perché mi permettono di
+            costruire applicazioni mobile performanti. Sono sempre alla ricerca
+            di nuove sfide, nuove tecnologie da imparare e progetti in cui poter
+            dare il massimo.
+          </p>
+
+          <a
+            href="https://www.linkedin.com/in/danielbarresi/"
+            target="_blank"
+            class="card-btn-gradient"
+          >
+            <img
+              src="assets/logo linkedin.png"
+              alt="linkedin"
+              class="icon-lang"
+            />
+            LINKEDIN
+          </a>
+
+          <a
+            href="https://github.com/DanielBarresi"
+            target="_blank"
+            class="card-btn-gradient"
+          >
+            <img src="assets/logo github.png" alt="github" class="icon-lang" />
+            GIT HUB
+          </a>
+
+          <a
+            href="assets/CV Barresi_Daniel.pdf"
+            target="_blank"
+            class="card-btn-gradient"
+          >
+            <img
+              src="assets/logo download.png"
+              alt="download"
+              class="icon-lang"
+            />
+            DOWNLOAD CV
+          </a>
+
+          <div class="spazio-vuoto"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sezione Skills -->
+
+<section id="skills" class="skills-section-custom">
+  <div class="container">
+    <h2>Skills & languages</h2>
+
+    <h3>Front-End</h3>
+    <div class="languages-grid">
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img src="assets/html5.png" alt="HTML5" class="icon-lang" />
+          <p>HTML5</p>
+        </div>
+      </div>
+
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img src="assets/css.webp" alt="CSS3" class="icon-lang" />
+          <p>CSS3</p>
+        </div>
+      </div>
+
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img src="assets/js.png" alt="JavaScript" class="icon-lang" />
+          <p>JavaScript</p>
+        </div>
+      </div>
+
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img src="assets/angular.png" alt="Angular" class="icon-lang" />
+          <p>Angular</p>
+        </div>
+      </div>
+
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img src="assets/bootstrap.png" alt="bootstrap" class="icon-lang" />
+          <p>Bootstrap</p>
+        </div>
+      </div>
+
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img src="assets/sass.png" alt="sass" class="icon-lang" />
+          <p>Sass</p>
+        </div>
+      </div>
+
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img src="assets/react.png" alt="react" class="icon-lang" />
+          <p>React</p>
+        </div>
+      </div>
+
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img src="assets/typescrypt.png" alt="typescript" class="icon-lang" />
+          <p>TypeScript</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>Back-End & Database</h3>
+    <div class="languages-grid">
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img src="assets/java.png" alt="Java" class="icon-lang" />
+          <p>Java</p>
+        </div>
+      </div>
+
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img src="assets/python.png" alt="python" class="icon-lang" />
+          <p>Python</p>
+        </div>
+      </div>
+
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img src="assets/mysql.png" alt="mySQL" class="icon-lang" />
+          <p>MySQL</p>
+        </div>
+      </div>
+
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img src="assets/mongodb.png" alt="mongoDB" class="icon-lang" />
+          <p>MongoDB</p>
+        </div>
+      </div>
+
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img
+            src="assets/data analitics.png"
+            alt="Data Analytics"
+            class="icon-lang"
+          />
+          <p>Data Analytics</p>
+        </div>
+      </div>
+
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img src="assets/C.png" alt="c" class="icon-lang" />
+          <p>C</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>Mobile & Tools</h3>
+    <div class="languages-grid mobile-tools-grid">
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img src="assets/flutter.png" alt="Flutter" class="icon-lang" />
+          <p>Flutter</p>
+        </div>
+      </div>
+
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img src="assets/dart.png" alt="Dart" class="icon-lang" />
+          <p>Dart</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>Cloud</h3>
+    <div class="languages-grid">
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img src="assets/aws.png" alt="AWS" class="icon-lang" />
+          <p>Aws Amazon Web Services</p>
+        </div>
+      </div>
+
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img src="assets/azure.png" alt="Azure" class="icon-lang" />
+          <p>Azure</p>
+        </div>
+      </div>
+
+      <div class="shadow-sm rounded-3 bg-body p-4 mb-5 hover-box-up">
+        <div class="display-4 text-primary mb-2">
+          <img
+            src="assets/google cloud.png"
+            alt="Google Cloud"
+            class="icon-lang"
+          />
+          <p>Google Cloud</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sezione Projects personali -->
+
+<section id="projects" class="projects-section">
+  <div class="container">
+    <h2 class="text-center mb-5">Projects & Certificate</h2>
+
+    <div class="projects-grid">
+      <div class="card-wrap">
+        <div class="card-header one">
+          <i class="fas fa-code"></i>
+        </div>
+        <div class="card-content">
+          <h1 class="card-title">Login Football Animated</h1>
+          <p class="card-text">
+            Applicazione Flutter con login animato e sfondi a tema calcio.
+          </p>
+          <a
+            href="https://github.com/DanielBarresi/login_football_animated"
+            target="_blank"
+            class="card-btn-gradient"
+          >
+            <img src="assets/logo github.png" alt="github" class="icon-lang" />
+            GIT HUB
+          </a>
+        </div>
+      </div>
+
+      <div class="card-wrap">
+        <div class="card-header two">
+          <img src="assets/razzo.png" alt="razzo" class="icon-lang" />
+        </div>
+        <div class="card-content">
+          <h1 class="card-title">Sito Replica OneKit</h1>
+          <p class="card-text">
+            Sito_Web_Replica-OneKit-Landing-Page con HTML5 e CSS3.
+          </p>
+          <a
+            href="https://github.com/DanielBarresi/Sito_Web_Replica-OneKit-_By_Barresi__Daniel-main"
+            target="_blank"
+            class="card-btn-gradient"
+          >
+            <img src="assets/logo github.png" alt="github" class="icon-lang" />
+            GIT HUB
+          </a>
+        </div>
+      </div>
+
+      <div class="card-wrap">
+        <div class="card-header three">
+          <i class="fas fa-code"></i>
+        </div>
+        <div class="card-content">
+          <h1 class="card-title">Django Projects</h1>
+          <p class="card-text">
+            progetto di blog sviluppato con il framework Django in Python.
+          </p>
+          <a
+            href="https://github.com/DanielBarresi/Django_Project"
+            target="_blank"
+            class="card-btn-gradient"
+          >
+            <img src="assets/logo github.png" alt="github" class="icon-lang" />
+            GIT HUB
+          </a>
+        </div>
+      </div>
+
+      <div class="card-wrap">
+        <div class="card-header four">
+          <img
+            src="assets/certified.png"
+            alt="certificato AWS"
+            class="icon-cert"
+          />
+        </div>
+        <div class="card-content">
+          <h1 class="card-title">BADGE</h1>
+          <p class="card-text">AWS EDUCATE</p>
+          <a
+            href="https://www.credly.com/badges/7837a7c7-7d24-4c8b-93de-1230574ec267"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button class="card-btn four">VIEW</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="card-wrap">
+        <div class="card-header five">
+          <img
+            src="assets/certified.png"
+            alt="certificato AWS"
+            class="icon-cert"
+          />
+        </div>
+        <div class="card-content">
+          <h1 class="card-title">CERTIFICATE</h1>
+          <p class="card-text">PANDAS</p>
+          <a
+            href="https://www.kaggle.com/learn/certification/danielbarresi/pandas"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button class="card-btn one">VIEW</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEZIONE CONTACT ME -->
+
+<section class="container py-5 newsletter-section" id="contact">
+  <h2 class="text-center mb-4 wow fadeIn">Contact Me!</h2>
+  <div class="row justify-content-center wow fadeInUp">
+    <div
+      class="col-12 col-md-10 col-lg-8 d-flex flex-column align-items-center"
+    >
+      <a
+        href="https://mail.google.com/mail/?view=cm&fs=1&to=daniel9018@hotmail.it"
+        target="_blank"
+        class="card-btn-gradient email-item"
+      >
+        <img src="assets/email.png" alt="email" class="icon-lang" />
+        EMAIL
+      </a>
+    </div>
+  </div>
+
+  <!-- sezione finale footer -->
+  <footer class="custom-footer">
+    <div class="footer-left">
+      <img src="assets/logoDB.png" alt="Logo" class="footer-logo" />
+    </div>
+    <div class="footer-center">© 2025 Barresi Daniel</div>
+    <nav class="footer-right">
+      <a href="#home" (click)="scrollTo($event, 'home')">Home</a>
+      <a href="#aboutme" (click)="scrollTo($event, 'aboutme')">About Me</a>
+      <a href="#skills" (click)="scrollTo($event, 'skills')">Languages</a>
+      <a href="#projects" (click)="scrollTo($event, 'projects')"
+        >Projects & Certificate</a
+      >
+      <a href="#contact" (click)="scrollTo($event, 'contact')">Contact</a>
+    </nav>
+  </footer>
+
+  <!-- Bottone Torna Su -->
+  <div class="torna-su">
+    <a href="#home" (click)="scrollTo($event, 'home')" title="Torna su">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#764ba2"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M18 15l-6-6-6 6" />
+      </svg>
+    </a>
+  </div>
+</section>

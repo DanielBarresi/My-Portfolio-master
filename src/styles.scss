@@ -1,0 +1,55 @@
+/* ========== CSS Variables ========== */
+:root {
+  --color-text: #4a3728;
+  --color-text-btn: #ffffff;
+  --card1-gradient-color1: #D4A574;
+  --card1-gradient-color2: #F5E6D3;
+  --card2-gradient-color1: #E8C4B8;
+  --card2-gradient-color2: #FDF5F0;
+  --card3-gradient-color1: #DEB887;
+  --card3-gradient-color2: #FAF0E6;
+  --card4-gradient-color1: #C19A6B;
+  --card4-gradient-color2: #F5DEB3;
+  --card5-gradient-color1: #E8D5C4;
+  --card5-gradient-color2: #FFFAF5;
+}
+
+/* ========== Reset & Base ========== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========== Responsive Font Sizes ========== */
+@media (min-width: 1441px) { html { font-size: 17px; } }
+@media (max-width: 768px) { html { font-size: 15px; } }
+@media (max-width: 480px) { html { font-size: 14px; } }
+@media (max-width: 320px) { html { font-size: 13px; } }
+
+/* ========== Utility Classes ========== */
+.text-center { text-align: center; }
+.d-flex { display: flex; }
+.flex-column { flex-direction: column; }
+.justify-content-center { justify-content: center; }
+.align-items-center { align-items: center; }
+
+@media (max-width: 768px) { .hide-mobile { display: none !important; } }
+@media (min-width: 769px) { .hide-desktop { display: none !important; } }
