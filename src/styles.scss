@@ -21,6 +21,28 @@
   box-sizing: border-box;
 }
 
+
+html, body {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#wrapper {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+footer.custom-footer {
+  flex-shrink: 0;
+}
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;

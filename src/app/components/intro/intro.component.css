@@ -1,0 +1,764 @@
+/* ========== CODE SNIPPET CARDS ========== */
+.card-cascade-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.code-snippet {
+  background: linear-gradient(145deg, #F5E7D6 0%, #EDE0CF 50%, #F5E7D6 100%);
+  border-radius: 16px;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  box-shadow: 0 15px 40px rgba(166, 124, 82, 0.3), 0 0 0 1px rgba(193, 154, 107, 0.3);
+  max-width: 500px;
+  width: 500px;
+  height: 280px;
+  overflow: hidden;
+  position: absolute;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.code-snippet:hover {
+  transform: scale(1.15) translateY(-20px);
+  z-index: 100 !important;
+  box-shadow: 0 30px 80px rgba(166, 124, 82, 0.5);
+}
+
+.cascade-card-1 { z-index: 1; top: -40px; left: -13%; }
+.cascade-card-2 { z-index: 2; top: 50px; left: 30%; }
+.cascade-card-3 { z-index: 3; top: 150px; left: 60%; }
+
+.code-header {
+  background: linear-gradient(180deg, #E8D5C4 0%, #DEB887 100%);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(193, 154, 107, 0.3);
+}
+
+.window-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.window-controls .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.window-controls .dot:hover { transform: scale(1.2); }
+.window-controls .dot.red { background: linear-gradient(135deg, #ff5f57, #ff4444); }
+.window-controls .dot.yellow { background: linear-gradient(135deg, #ffbd2e, #ffaa00); }
+.window-controls .dot.green { background: linear-gradient(135deg, #28ca42, #20aa35); }
+
+.code-content {
+  padding: 25px 20px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.code-snippet .line {
+  display: flex;
+  align-items: center;
+  margin: 4px 0;
+  padding: 2px 0;
+  color: #4a3728;
+  border-radius: 4px;
+  animation: fadeInLine 0.5s ease-out backwards;
+}
+
+.code-snippet .line:hover { background: rgba(193, 154, 107, 0.15); }
+.code-snippet .line:nth-child(1) { animation-delay: 0.1s; }
+.code-snippet .line:nth-child(2) { animation-delay: 0.2s; }
+.code-snippet .line:nth-child(3) { animation-delay: 0.3s; }
+.code-snippet .line:nth-child(4) { animation-delay: 0.4s; }
+.code-snippet .line:nth-child(5) { animation-delay: 0.5s; }
+.code-snippet .line:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInLine {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.line-number {
+  color: #8b7355;
+  min-width: 35px;
+  text-align: right;
+  margin-right: 20px;
+  font-size: 13px;
+}
+
+.code-snippet .line.indent { padding-left: 40px; }
+.code-snippet .purple { color: #8b4789; font-weight: 600; }
+.code-snippet .blue { color: #2563ab; margin: 0 6px; }
+.code-snippet .green { color: #2d7a3e; }
+.code-snippet .orange { color: #b36b2d; font-style: italic; }
+/* ========== INTRO SECTION ========== */
+.intro-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(135deg, #F5E6D3 0%, #E8D5C4 20%, #DEB887 40%, #D4A574 60%, #C19A6B 80%, #A67C52 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0 5%;
+}
+
+.intro-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 80%, rgba(166, 124, 82, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.intro-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  gap: 60px;
+  z-index: 2;
+}
+
+.intro-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.intro-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-hat {
+  z-index: 10;
+  font-size: clamp(1.6rem, 5vw, 5rem);
+  font-weight: bold;
+  color: transparent;
+  background: linear-gradient(45deg, #4a3728 0%, #6b4423 25%, #8b5a2b 50%, #4a3728 75%, #2d1f14 100%);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shimmer 4s ease-in-out infinite;
+  margin-bottom: 1rem;
+  font-family: 'Elegante', sans-serif;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 3px;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.masking-container {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 2rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.typewriter-animation {
+  color: #3d2914;
+  font-size: clamp(14px, 3vw, 30px);
+  font-family: 'Elegante', sans-serif;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typewriter 5s steps(50) 1s 1 normal both;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+  letter-spacing: 1px;
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.wave-divider {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+
+
+/* ========== MOBILE FIRST APPROACH ========== */
+
+/* ========== BASE STYLES - Mobile (< 768px) ========== */
+.intro-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(135deg, #F5E6D3 0%, #E8D5C4 20%, #DEB887 40%, #D4A574 60%, #C19A6B 80%, #A67C52 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 80px 20px 120px;
+}
+
+.intro-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 80%, rgba(166, 124, 82, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.intro-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  gap: 40px;
+  z-index: 2;
+}
+
+.intro-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+.intro-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.portfolio-hat {
+  z-index: 10;
+  font-size: clamp(2rem, 8vw, 5rem);
+  font-weight: bold;
+  color: transparent;
+  background: linear-gradient(45deg, #4a3728 0%, #6b4423 25%, #8b5a2b 50%, #4a3728 75%, #2d1f14 100%);
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shimmer 4s ease-in-out infinite;
+  margin-bottom: 1rem;
+  font-family: 'Elegante', sans-serif;
+  text-align: center;
+  width: 100%;
+  letter-spacing: 2px;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.masking-container {
+  position: relative;
+  z-index: 10;
+  margin-bottom: 2rem;
+  width: 100%;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
+}
+
+.typewriter-animation {
+  color: #3d2914;
+  font-size: clamp(16px, 4vw, 30px);
+  font-family: 'Elegante', sans-serif;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  animation: typewriter 5s steps(50) 1s 1 normal both;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+  letter-spacing: 1px;
+}
+
+@keyframes typewriter {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.cursor {
+  border-right: 2px solid #3d2914;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: #3d2914; }
+}
+
+/* ========== CODE SNIPPET CARDS - MOBILE ========== */
+.card-cascade-container {
+  position: relative;
+  width: 100%;
+  min-height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.code-snippet {
+  background: linear-gradient(145deg, #F5E7D6 0%, #EDE0CF 50%, #F5E7D6 100%);
+  border-radius: 12px;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  box-shadow: 0 10px 30px rgba(166, 124, 82, 0.3), 0 0 0 1px rgba(193, 154, 107, 0.3);
+  max-width: 95%;
+  width: 100%;
+  height: auto;
+  min-height: 200px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+.code-snippet:active {
+  transform: scale(1.05);
+  box-shadow: 0 20px 50px rgba(166, 124, 82, 0.4);
+}
+
+/* Mobile: stack cards vertically */
+.cascade-card-1 { 
+  z-index: 3; 
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.cascade-card-2 { 
+  z-index: 2; 
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.cascade-card-3 { 
+  z-index: 1; 
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.code-header {
+  background: linear-gradient(180deg, #E8D5C4 0%, #DEB887 100%);
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(193, 154, 107, 0.3);
+}
+
+.window-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.window-controls .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.window-controls .dot:active { transform: scale(1.2); }
+.window-controls .dot.red { background: linear-gradient(135deg, #ff5f57, #ff4444); }
+.window-controls .dot.yellow { background: linear-gradient(135deg, #ffbd2e, #ffaa00); }
+.window-controls .dot.green { background: linear-gradient(135deg, #28ca42, #20aa35); }
+
+.code-content {
+  padding: 15px;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+.code-snippet .line {
+  display: flex;
+  align-items: center;
+  margin: 3px 0;
+  padding: 2px 0;
+  color: #4a3728;
+  border-radius: 4px;
+  animation: fadeInLine 0.5s ease-out backwards;
+  white-space: nowrap;
+}
+
+.code-snippet .line:active { background: rgba(193, 154, 107, 0.15); }
+.code-snippet .line:nth-child(1) { animation-delay: 0.1s; }
+.code-snippet .line:nth-child(2) { animation-delay: 0.2s; }
+.code-snippet .line:nth-child(3) { animation-delay: 0.3s; }
+.code-snippet .line:nth-child(4) { animation-delay: 0.4s; }
+.code-snippet .line:nth-child(5) { animation-delay: 0.5s; }
+.code-snippet .line:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInLine {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.line-number {
+  color: #8b7355;
+  min-width: 25px;
+  text-align: right;
+  margin-right: 15px;
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.code-snippet .line.indent { padding-left: 20px; }
+.code-snippet .purple { color: #8b4789; font-weight: 600; }
+.code-snippet .blue { color: #2563ab; margin: 0 4px; }
+.code-snippet .green { color: #2d7a3e; }
+.code-snippet .orange { color: #b36b2d; font-style: italic; }
+
+/* ========== WAVE DIVIDER ========== */
+.wave-divider {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  z-index: 3;
+  display: block;
+}
+
+/* ========== TABLET (768px - 1024px) ========== */
+@media (min-width: 768px) {
+  .intro-container {
+    padding: 100px 40px 150px;
+  }
+
+  .intro-content-wrapper {
+    gap: 50px;
+  }
+
+  .portfolio-hat {
+    letter-spacing: 3px;
+  }
+
+  .card-cascade-container {
+    min-height: 450px;
+  }
+
+  .code-snippet {
+    max-width: 450px;
+    width: 450px;
+    min-height: 250px;
+    border-radius: 14px;
+  }
+
+  /* Tablet: slight overlap */
+  .cascade-card-1 { 
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 5%;
+  }
+
+  .cascade-card-2 { 
+    z-index: 2;
+    position: absolute;
+    top: 80px;
+    left: 25%;
+  }
+
+  .cascade-card-3 { 
+    z-index: 1;
+    position: absolute;
+    top: 160px;
+    left: 45%;
+  }
+
+  .code-snippet:hover {
+    transform: scale(1.1) translateY(-15px);
+    z-index: 100 !important;
+    box-shadow: 0 25px 60px rgba(166, 124, 82, 0.45);
+  }
+
+  .code-header {
+    padding: 11px 18px;
+  }
+
+  .window-controls .dot {
+    width: 11px;
+    height: 11px;
+  }
+
+  .window-controls .dot:hover { transform: scale(1.2); }
+
+  .code-content {
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .line-number {
+    min-width: 30px;
+    margin-right: 18px;
+    font-size: 12px;
+  }
+
+  .code-snippet .line.indent { padding-left: 30px; }
+}
+
+/* ========== DESKTOP (1025px - 1440px) ========== */
+@media (min-width: 1025px) {
+  .intro-container {
+    height: 100vh;
+    padding: 0 5%;
+  }
+
+  .intro-content-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .intro-left {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .portfolio-hat {
+    text-align: left;
+  }
+
+  .masking-container {
+    justify-content: flex-start;
+  }
+
+  .typewriter-animation {
+    text-align: left;
+  }
+
+  .card-cascade-container {
+    min-height: 600px;
+  }
+
+  .code-snippet {
+    max-width: 500px;
+    width: 500px;
+    height: 280px;
+    min-height: 280px;
+    border-radius: 16px;
+  }
+
+  /* Desktop: full cascade effect */
+  .cascade-card-1 { 
+    z-index: 1;
+    top: -40px;
+    left: -13%;
+  }
+
+  .cascade-card-2 { 
+    z-index: 2;
+    top: 50px;
+    left: 30%;
+  }
+
+  .cascade-card-3 { 
+    z-index: 3;
+    top: 150px;
+    left: 60%;
+  }
+
+  .code-snippet:hover {
+    transform: scale(1.15) translateY(-20px);
+    z-index: 100 !important;
+    box-shadow: 0 30px 80px rgba(166, 124, 82, 0.5);
+  }
+
+  .code-header {
+    padding: 12px 20px;
+  }
+
+  .window-controls .dot {
+    width: 12px;
+    height: 12px;
+    gap: 8px;
+  }
+
+  .code-content {
+    padding: 25px 20px;
+    font-size: 15px;
+    line-height: 1.8;
+  }
+
+  .line-number {
+    min-width: 35px;
+    margin-right: 20px;
+    font-size: 13px;
+  }
+
+  .code-snippet .line { margin: 4px 0; }
+  .code-snippet .line:hover { background: rgba(193, 154, 107, 0.15); }
+  .code-snippet .line.indent { padding-left: 40px; }
+}
+
+/* ========== LARGE DESKTOP (> 1440px) ========== */
+@media (min-width: 1441px) {
+  .intro-content-wrapper {
+    gap: 80px;
+  }
+
+  .code-snippet {
+    max-width: 550px;
+    width: 550px;
+    height: 300px;
+    min-height: 300px;
+  }
+
+  .cascade-card-1 { left: -10%; }
+  .cascade-card-2 { left: 32%; }
+  .cascade-card-3 { left: 62%; }
+
+  .code-content {
+    font-size: 16px;
+    padding: 30px 25px;
+  }
+}
+
+/* ========== LANDSCAPE ORIENTATION (Mobile/Tablet) ========== */
+@media (max-width: 1024px) and (orientation: landscape) {
+  .intro-container {
+    min-height: auto;
+    padding: 60px 30px 100px;
+  }
+
+  .intro-content-wrapper {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .card-cascade-container {
+    min-height: 300px;
+  }
+
+  .code-snippet {
+    max-width: 350px;
+    width: 350px;
+    min-height: 180px;
+  }
+
+  .cascade-card-1 { 
+    top: 0;
+    left: 0;
+  }
+
+  .cascade-card-2 { 
+    top: 50px;
+    left: 20%;
+  }
+
+  .cascade-card-3 { 
+    top: 100px;
+    left: 40%;
+  }
+
+  .code-content {
+    padding: 12px;
+    font-size: 11px;
+  }
+}
+
+/* ========== EXTRA SMALL DEVICES (< 375px) ========== */
+@media (max-width: 374px) {
+  .intro-container {
+    padding: 70px 15px 100px;
+  }
+
+  .portfolio-hat {
+    font-size: clamp(1.5rem, 7vw, 3rem);
+    letter-spacing: 1px;
+  }
+
+  .typewriter-animation {
+    font-size: clamp(14px, 3.5vw, 20px);
+  }
+
+  .code-snippet {
+    border-radius: 10px;
+    min-height: 180px;
+  }
+
+  .code-content {
+    padding: 12px;
+    font-size: 11px;
+  }
+
+  .line-number {
+    min-width: 20px;
+    margin-right: 10px;
+    font-size: 10px;
+  }
+
+  .window-controls .dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* ========== ULTRA WIDE SCREENS (> 1920px) ========== */
+@media (min-width: 1921px) {
+  .intro-content-wrapper {
+    max-width: 1800px;
+  }
+
+  .code-snippet {
+    max-width: 600px;
+    width: 600px;
+  }
+}

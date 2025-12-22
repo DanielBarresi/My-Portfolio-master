@@ -1,0 +1,38 @@
+<!-- Bottone toggle con aria labels per accessibilità -->
+<button 
+  class="sidebar-toggle-btn" 
+  (click)="toggleSidebar()"
+  [attr.aria-expanded]="sidebarToggled"
+  aria-label="Toggle navigation menu">
+  &#9776;
+</button>
+
+<!-- Sidebar -->
+<div 
+  id="sidebar-wrapper" 
+  [class.closed]="!sidebarToggled"
+  role="navigation"
+  aria-label="Main navigation">
+  <ul class="sidebar-nav">
+    <li class="sidebar-brand">
+      <a href="#" aria-label="Home - Logo">
+        <img src="assets/logoDB.png" alt="Logo" class="sidebar-logo" />
+      </a>
+    </li>
+    <li>
+      <a href="#home" (click)="scrollTo($event, 'home')">Home</a>
+    </li>
+    <li>
+      <a href="#aboutme" (click)="scrollTo($event, 'aboutme')">About Me</a>
+    </li>
+    <li>
+      <a href="#skills" (click)="scrollTo($event, 'skills')">Languages</a>
+    </li>
+    <li>
+      <a href="#projects" (click)="scrollTo($event, 'projects')">Projects & Certificate</a>
+    </li>
+    <li>
+      <a href="#contact" (click)="scrollTo($event, 'contact')">Contact</a>
+    </li>
+  </ul>
+</div>

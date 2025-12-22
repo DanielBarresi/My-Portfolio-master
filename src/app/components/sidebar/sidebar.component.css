@@ -1,0 +1,373 @@
+/* Bottone toggle sidebar */
+.sidebar-toggle-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+     background: linear-gradient(135deg, #F5E6D3 0%, #E8D5C4 20%, #DEB887 40%, #D4A574 60%, #C19A6B 80%, #A67C52 100%);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  transition: background 0.3s;
+}
+.sidebar-toggle-btn:hover {
+  background: #a67c52;
+}
+
+/* Sidebar chiusa */
+#sidebar-wrapper.closed {
+  margin-left: -260px;
+  opacity: 0.2;
+  pointer-events: none;
+  transition: all 0.5s;
+}
+/* Sidebar CSS qui */
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  margin-left: 0;
+  overflow-y: auto;
+  background: linear-gradient(180deg, rgba(245, 230, 211, 0.98) 0%, rgba(212, 165, 116, 0.95) 50%, rgba(193, 154, 107, 0.98) 100%);
+  border-right: 2px solid rgba(222, 184, 135, 0.5);
+  box-shadow: 2px 0 30px rgba(193, 154, 107, 0.4);
+  transition: all 0.5s ease;
+  backdrop-filter: blur(10px);
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  line-height: 50px;
+  border-bottom: 1px solid rgba(222, 184, 135, 0.3);
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #4a3728;
+  padding-left: 20px;
+  font-family: 'Elegante', sans-serif;
+  font-weight: 500;
+  transition: all 0.4s ease;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.sidebar-nav li a:hover {
+  color: #2d1f14;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0%, rgba(245, 230, 211, 0.6) 100%);
+  padding-left: 35px;
+  border-left: 3px solid #D4A574;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  border-bottom: 2px solid rgba(222, 184, 135, 0.5);
+}
+
+.sidebar-nav > .sidebar-brand a {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  background: none;
+  padding-left: 20px;
+}
+
+.sidebar-logo {
+  width: 110px;
+  height: auto;
+  filter: drop-shadow(0 0 15px rgba(222, 184, 135, 0.6)) brightness(1.15);
+  transition: all 0.4s ease;
+}
+
+.sidebar-logo:hover {
+  filter: drop-shadow(0 0 25px rgba(212, 165, 116, 0.8)) brightness(1.25);
+  transform: scale(1.05);
+}
+
+
+/* media query */
+
+/* ===== MOBILE FIRST APPROACH ===== */
+
+/* BASE STYLES - Mobile (< 768px) */
+.sidebar-toggle-btn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1100;
+  background: linear-gradient(135deg, #F5E6D3 0%, #E8D5C4 20%, #DEB887 40%, #D4A574 60%, #C19A6B 80%, #A67C52 100%);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 14px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+  transition: background 0.3s;
+}
+
+.sidebar-toggle-btn:hover {
+  background: #a67c52;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 280px;
+  height: 100vh;
+  margin-left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, rgba(245, 230, 211, 0.98) 0%, rgba(212, 165, 116, 0.95) 50%, rgba(193, 154, 107, 0.98) 100%);
+  border-right: 2px solid rgba(222, 184, 135, 0.5);
+  box-shadow: 2px 0 30px rgba(193, 154, 107, 0.4);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+
+#sidebar-wrapper.closed {
+  margin-left: -100%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar-nav li {
+  line-height: 45px;
+  border-bottom: 1px solid rgba(222, 184, 135, 0.3);
+}
+
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #4a3728;
+  padding-left: 15px;
+  font-family: 'Elegante', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.sidebar-nav li a:hover,
+.sidebar-nav li a:active {
+  color: #2d1f14;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0%, rgba(245, 230, 211, 0.6) 100%);
+  padding-left: 25px;
+  border-left: 3px solid #D4A574;
+}
+
+.sidebar-nav > .sidebar-brand {
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  border-bottom: 2px solid rgba(222, 184, 135, 0.5);
+}
+
+.sidebar-nav > .sidebar-brand a {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  background: none;
+  padding-left: 0;
+  border-left: none;
+}
+
+.sidebar-logo {
+  width: 90px;
+  height: auto;
+  filter: drop-shadow(0 0 15px rgba(222, 184, 135, 0.6)) brightness(1.15);
+  transition: all 0.4s ease;
+}
+
+.sidebar-logo:hover {
+  filter: drop-shadow(0 0 25px rgba(212, 165, 116, 0.8)) brightness(1.25);
+  transform: scale(1.05);
+}
+
+/* ===== TABLET (768px - 1024px) ===== */
+@media (min-width: 768px) {
+  .sidebar-toggle-btn {
+    top: 18px;
+    left: 18px;
+    padding: 9px 15px;
+    font-size: 22px;
+  }
+
+  #sidebar-wrapper {
+    max-width: 260px;
+  }
+
+  .sidebar-nav li {
+    line-height: 48px;
+  }
+
+  .sidebar-nav li a {
+    padding-left: 18px;
+    font-size: 15px;
+  }
+
+  .sidebar-nav li a:hover,
+  .sidebar-nav li a:active {
+    padding-left: 30px;
+  }
+
+  .sidebar-nav > .sidebar-brand {
+    height: 75px;
+    line-height: 75px;
+  }
+
+  .sidebar-logo {
+    width: 100px;
+  }
+}
+
+/* ===== DESKTOP (> 1024px) ===== */
+@media (min-width: 1025px) {
+  .sidebar-toggle-btn {
+    top: 20px;
+    left: 20px;
+    padding: 10px 16px;
+    font-size: 24px;
+  }
+
+  #sidebar-wrapper {
+    max-width: 280px;
+  }
+
+  .sidebar-nav li {
+    line-height: 50px;
+  }
+
+  .sidebar-nav li a {
+    padding-left: 20px;
+    font-size: 16px;
+  }
+
+  .sidebar-nav li a:hover {
+    padding-left: 35px;
+  }
+
+  .sidebar-nav > .sidebar-brand {
+    height: 80px;
+    line-height: 80px;
+  }
+
+  .sidebar-logo {
+    width: 110px;
+  }
+}
+
+/* ===== LARGE DESKTOP (> 1440px) ===== */
+@media (min-width: 1441px) {
+  #sidebar-wrapper {
+    max-width: 300px;
+  }
+
+  .sidebar-nav li a {
+    font-size: 17px;
+  }
+
+  .sidebar-logo {
+    width: 120px;
+  }
+}
+
+/* ===== LANDSCAPE ORIENTATION (Mobile/Tablet) ===== */
+@media (max-width: 1024px) and (orientation: landscape) {
+  #sidebar-wrapper {
+    max-width: 240px;
+  }
+
+  .sidebar-nav > .sidebar-brand {
+    height: 60px;
+    line-height: 60px;
+  }
+
+  .sidebar-logo {
+    width: 80px;
+  }
+
+  .sidebar-nav li {
+    line-height: 40px;
+  }
+
+  .sidebar-nav li a {
+    font-size: 13px;
+  }
+}
+
+/* ===== EXTRA SMALL DEVICES (< 375px) ===== */
+@media (max-width: 374px) {
+  #sidebar-wrapper {
+    max-width: 260px;
+  }
+
+  .sidebar-toggle-btn {
+    padding: 7px 12px;
+    font-size: 18px;
+  }
+
+  .sidebar-nav li a {
+    font-size: 13px;
+  }
+
+  .sidebar-logo {
+    width: 80px;
+  }
+}
+
+/* ===== TOUCH DEVICES - Miglioramenti UX ===== */
+@media (hover: none) and (pointer: coarse) {
+  .sidebar-nav li a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    min-height: 44px; /* Apple's minimum tap target */
+    display: flex;
+    align-items: center;
+  }
+
+  .sidebar-toggle-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
