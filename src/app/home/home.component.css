@@ -170,7 +170,7 @@ body, html {
 }
 
 .intro-left {
-	flex: 1;
+	flex: 0;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -246,22 +246,7 @@ body, html {
 	50% { opacity: 0; }
 }
 
-.wave-divider {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	color: white;
-	z-index: 5;
-	overflow: hidden;
-	line-height: 0;
-}
 
-.wave-divider svg {
-	display: block;
-	width: 100%;
-	height: clamp(50px, 10vw, 120px);
-}
 
 /* ========== CODE SNIPPET CARDS ========== */
 .card-cascade-container {

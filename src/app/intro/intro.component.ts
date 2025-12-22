@@ -1,74 +1,39 @@
-import { Component, ElementRef, AfterViewInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { gsap } from 'gsap';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-intro',
   templateUrl: './intro.component.html',
   styleUrls: ['./intro.component.css']
 })
-export class IntroComponent implements AfterViewInit {
-  @ViewChild('portfolioText', { static: false }) portfolioTextRef!: ElementRef;
-  sidebarToggled = false;
+export class IntroComponent implements OnInit {
+  // Queste variabili DEVONO esistere per l'HTML
+  viewportClass: string = 'is-desktop';
+  showCard2: boolean = true;
+  showCard3: boolean = true;
 
-  contactForm: FormGroup;
-  successMsg: string = '';
-  errorMsg: string = '';
-
-  constructor(private fb: FormBuilder) {
-    this.contactForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required]
-    });
-  }
-  sendEmail(): void {
-    if (this.contactForm.invalid) {
-      this.errorMsg = 'Compila tutti i campi correttamente.';
-      this.successMsg = '';
-      return;
-    }
-
-    // Qui puoi integrare un servizio email (es. EmailJS, backend API, ecc.)
-    // Per ora mostriamo solo un messaggio di successo simulato
-    this.successMsg = 'Messaggio inviato con successo!';
-    this.errorMsg = '';
-    this.contactForm.reset();
+  ngOnInit() {
+    this.updateLayout();
   }
 
-  ngAfterViewInit(): void {
-    // Animazione GSAP per il testo Portfolio
-    if (this.portfolioTextRef) {
-      gsap.from(this.portfolioTextRef.nativeElement, {
-        duration: 1.5,
-        y: -100,
-        opacity: 0,
-        rotation: -10,
-        ease: 'bounce.out',
-        delay: 0.5
-      });
-
-      gsap.to(this.portfolioTextRef.nativeElement, {
-        duration: 2,
-        scale: 1.1,
-        yoyo: true,
-        repeat: -1,
-        ease: 'power1.inOut'
-      });
-    }
+  @HostListener('window:resize')
+  onResize() {
+    this.updateLayout();
   }
 
-  toggleSidebar(): void {
-    this.sidebarToggled = !this.sidebarToggled;
-  }
-
-  scrollTo(event: Event, section: string): void {
-    event.preventDefault();
-    const element = document.getElementById(section);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Chiudi la sidebar dopo il click (per mobile)
-      this.sidebarToggled = false;
+  private updateLayout() {
+    const w = window.innerWidth;
+    if (w < 768) {
+      this.viewportClass = 'is-mobile';
+      this.showCard2 = false;
+      this.showCard3 = false;
+    } else if (w < 1025) {
+      this.viewportClass = 'is-tablet';
+      this.showCard2 = true;
+      this.showCard3 = false;
+    } else {
+      this.viewportClass = 'is-desktop';
+      this.showCard2 = true;
+      this.showCard3 = true;
     }
   }
 }
