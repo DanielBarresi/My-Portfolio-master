@@ -37,9 +37,9 @@
   box-shadow: 0 30px 80px rgba(166, 124, 82, 0.5);
 }
 
-.cascade-card-1 { z-index: 1; top: -40px; left: -13%; }
-.cascade-card-2 { z-index: 2; top: 50px; left: 30%; }
-.cascade-card-3 { z-index: 3; top: 150px; left: 60%; }
+.cascade-card-1 { z-index: 1; top: -40px; left: 5%; }
+.cascade-card-2 { z-index: 2; top: 50px; left: 45%; }
+.cascade-card-3 { z-index: 3; top: 150px; left: 75%; }
 
 .code-header {
   background: linear-gradient(180deg, #E8D5C4 0%, #DEB887 100%);
@@ -378,10 +378,12 @@
 .card-cascade-container {
   position: relative;
   width: 100%;
-  min-height: 350px;
+  min-height: 280px;
+  max-height: 320px;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .card-body {
@@ -389,11 +391,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
-  padding: 0;
+  gap: 15px;
+  padding: 0 10px;
   position: relative;
   width: 100%;
   height: 100%;
+}
+
+/* Mobile: Hide 2nd and 3rd cards */
+.cascade-card-2,
+.cascade-card-3 {
+  display: none;
 }
 
 .code-snippet {
@@ -523,6 +531,12 @@
 
 /* ========== TABLET (768px - 1024px) ========== */
 @media (min-width: 768px) {
+  /* Show all cards on tablet */
+  .cascade-card-2,
+  .cascade-card-3 {
+    display: block;
+  }
+
   .intro-container {
     padding: 100px 40px 150px;
   }
@@ -537,6 +551,8 @@
 
   .card-cascade-container {
     min-height: 450px;
+    max-height: none;
+    overflow: visible;
   }
 
   .code-snippet {
@@ -708,9 +724,9 @@
     min-height: 300px;
   }
 
-  .cascade-card-1 { left: -10%; }
-  .cascade-card-2 { left: 32%; }
-  .cascade-card-3 { left: 62%; }
+  .cascade-card-1 { left: 15%; }
+  .cascade-card-2 { left: 50%; }
+  .cascade-card-3 { left: 80%; }
 
   .code-content {
     font-size: 16px;

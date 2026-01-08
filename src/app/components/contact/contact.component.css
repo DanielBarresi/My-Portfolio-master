@@ -202,13 +202,13 @@
 /* ========== EXTRA SMALL MOBILE (< 375px) ========== */
 @media (max-width: 374px) {
   .newsletter-section {
-    padding: 50px 15px;
+    padding: 45px 12px;
   }
 
   .newsletter-section h2 {
-    font-size: 1.7rem;
-    margin-bottom: 30px;
-    letter-spacing: 1.5px;
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
   }
 
   .email-item {
@@ -216,13 +216,14 @@
   }
 
   .card-btn-gradient {
-    padding: 12px 30px;
-    font-size: 14px;
+    padding: 10px 25px;
+    font-size: 13px;
+    border-radius: 22px;
   }
 
   .icon-lang {
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
   }
 }
 
